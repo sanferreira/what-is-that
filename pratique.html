@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/global.css" />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    />
+    <title>What is that?</title>
+    <style>
+     
+      #arrayDisplay,
+      #consoleOutput {
+        white-space: pre-wrap;
+      } 
+      #arrayDisplay, #consoleOutput { white-space: pre-wrap; display: flex; flex-direction: column; align-items: center;  }
+      .console-container { border: 1px solid #ccc; padding: 10px; border-radius: 5px; margin:10px; display: flex; justify-content: center; align-items: center; flex-direction: column;}
+    </style>
+  </head>
+  <body>
+    <header class="header">
+      <img src="logo.png" alt="</What is That>" class="logo" />
+      <nav>
+        <ol>
+          <li><a href="/index.html">Sobre Nós</a></li>
+          <li><a href="/arrays.html">Arrays</a></li>
+          <li><a href="/contato.html">Contato</a></li>
+          <li><a href="/quest.html">Questões</a></li>
+          <li><a href="/pratique.html">Pratique</a></li>
+        </ol>
+      </nav>
+    </header>
+    <main class="container mt-4">
+        <h1 class="text-center mb-4">Pratique com Arrays</h1>
+        <p class="text-center mb-4">Use os métodos de array aprendidos (push, pop, shift, unshift, reverse, sort, etc.) para manipular o array abaixo.  Digite o comando no campo à esquerda e veja o resultado à direita. Exemplo: `meuArray.push("E")`</p>
+        <div class="row">
+          <div class="col-md-6">
+            <div class="console-container">
+              <div id="arrayDisplay" class="mb-2">
+                <code>let meuArray = ["A", "B", "C", "D"];</code>
+              </div>
+              <textarea id="consoleInput" rows="10" class="form-control" placeholder='Digite seu código JavaScript aqui (ex: meuArray.push("E");)'></textarea>
+            </div>
+            <button id="runCode" class="button mt-2">Executar</button>
+
+          </div>
+          <div class="col-md-6">
+            <div class="console-container">
+              <pre id="consoleOutput"></pre>
+            </div>
+          </div>
+        </div>
+      </main>
+    <script src="js/console.js"></script>
+  </body>
+</html>

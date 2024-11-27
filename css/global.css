@@ -1,0 +1,85 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+*{  
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+    font-style: normal;
+}
+
+
+body {
+    display: grid;
+    min-height: 100vh; /* Certifique-se que o body ocupa toda a altura da viewport */
+    grid-template-rows: auto 1fr auto; /* Três linhas: header, main, footer */
+    background-color: #f8f9fa;
+    color: #333; 
+  }
+  
+  header {
+    grid-row: 1; /* header ocupa a primeira linha */
+  }
+  
+  main {
+    grid-row: 2; /* main ocupa a segunda linha */
+  }
+  
+  footer {
+    grid-row: 3;
+    background-color: #343a40;
+    padding: 20px;
+    color: #fff;
+    text-align: center; 
+    font-size: 0.9em; 
+  }
+
+.header {
+    width: 100vw;
+    position: relative; 
+    background-color: #343a40;
+    color: #fff;
+    padding: 15px 20px;
+    display: flex; 
+    justify-content: space-between; 
+    align-items: center;
+}
+
+.header nav ol {
+    list-style: none;
+    display: flex;
+}
+
+.header nav ol li {
+    margin-left: 20px; 
+}
+
+.header nav ol li a {
+    color: #fff; 
+    text-decoration: none; 
+}
+
+.header nav ol li a:hover {
+    text-decoration: underline; 
+}
+
+main {
+    flex: 1;
+    padding: 20px;
+}
+
+
+h1 {
+    font-size: 2.5em; 
+    margin-bottom: 10px; 
+}
+
+h2 {
+    font-size: 2em; 
+    margin-top: 20px; 
+    margin-bottom: 10px; 
+}
+
+ol {
+    margin-left: 20px;
+}
+
+

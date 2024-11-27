@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Quiz: Arrays em JavaScript</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/global.css" />
+    <link rel="stylesheet" href="css/contato.css" />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    />
+    <style>
+      .correct {
+        color: green;
+        font-weight: bold;
+      }
+      .incorrect {
+        color: red;
+        font-weight: bold;
+      }
+      .question-container {
+        margin-bottom: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <header class="header">
+      <img src="logo.png" alt="</What is That>" class="logo" />
+      <nav>
+        <ol>
+          <li><a href="/index.html">Sobre Nós</a></li>
+          <li><a href="/arrays.html">Arrays</a></li>
+          <li><a href="/contato.html">Contato</a></li>
+          <li><a href="/quest.html">Questões</a></li>
+          <li><a href="/pratique.html">Pratique</a></li>
+        </ol>
+      </nav>
+    </header>
+    <main class="container">
+      <h1>Quiz: Arrays em JavaScript</h1>
+      <form id="quizForm">
+        <div id="quiz-questions">
+          <!-- Perguntas serão adicionadas aqui dinamicamente -->
+        </div>
+        <div class="text-center mt-4">
+          <button type="submit" class="button">
+            Verificar Respostas
+          </button>
+        </div>
+      </form>
+
+      <div class="modal fade" id="resultModal" tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title">Resultados do Quiz</h5>
+              <button
+                type="button"
+                class="close"
+                data-dismiss="modal"
+                aria-label="Close"
+              >
+                <span aria-hidden="true">×</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <p id="resultText"></p>
+              <div id="incorrectQuestions"></div>
+            </div>
+            <div class="modal-footer">
+              <button
+                type="button"
+                class="btn btn-secondary"
+                data-dismiss="modal"
+              >
+                Fechar
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+    <footer class="footer">
+        <p>© 2024 What is that. Todos os direitos reservados.</p>
+    </footer>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="js/quiz.js"></script>
+  </body>
+</html>

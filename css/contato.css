@@ -1,0 +1,48 @@
+#contato {
+    padding: 20px;
+    max-width: 600px; 
+    margin: 0 auto; 
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#contato form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+#contato label {
+    margin-bottom: 5px;
+}
+
+#contato input,
+#contato textarea {
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+#contato button {
+    padding: 10px 15px;
+    background-color: #333;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#contato #message {
+    margin-top: 10px;
+    padding: 10px;
+    font-weight: bold;
+}
+
+#contato #message.success {
+    color: green;
+}
+
+#contato #message.error {
+    color: red;
+}

@@ -1,0 +1,544 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/global.css" />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    />
+    <title>What is that?</title>
+  </head>
+  <body>
+    <header class="header">
+      <img src="logo.png" alt="</What is That>" class="logo" />
+      <nav>
+        <ol>
+          <li><a href="/index.html">Sobre Nós</a></li>
+          <li><a href="/arrays.html">Arrays</a></li>
+          <li><a href="/contato.html">Contato</a></li>
+          <li><a href="/quest.html">Questões</a></li>
+          <li><a href="/pratique.html">Pratique</a></li>
+        </ol>
+      </nav>
+    </header>
+    <main class="container">
+      <section id="intro" class="section active">
+        <h1>O que é um Array?</h1>
+        <p>
+          Um array (ou vetor) é uma estrutura de dados fundamental em JavaScript
+          que armazena uma coleção ordenada de elementos. Esses elementos podem
+          ser de qualquer tipo de dado (números, strings, booleanos, objetos,
+          outros arrays, etc.), embora seja comum que os elementos de um array
+          sejam do mesmo tipo. Arrays são indexados, começando do índice 0 para
+          o primeiro elemento.
+        </p>
+        <h2>Exemplo de um Array</h2>
+        <div class="code-block">
+          <pre><code>const frutas = ["maçã", "banana", "laranja"];</code></pre>
+        </div>
+        <p>
+          Neste exemplo, `frutas` é um array que contém três strings. Podemos
+          acessar cada elemento pelo seu índice: `frutas[0]` retorna "maçã",
+          `frutas[1]` retorna "banana", e assim por diante.
+        </p>
+      </section>
+
+      <section id="concat" class="section">
+        <h2>concat()</h2>
+        <div class="explanation-box">
+          <p>
+            O método <code>concat()</code> é usado para concatenar (unir) dois
+            ou mais arrays, retornando um *novo* array que contém todos os
+            elementos dos arrays originais. O array original não é modificado.
+          </p>
+          <p>
+            <strong>Sintaxe:</strong>
+            <code>array1.concat(array2, array3, ..., arrayN)</code>
+          </p>
+          <p><strong>Exemplo:</strong></p>
+          <pre><code>const arr1 = [1, 2, 3];
+const arr2 = [4, 5, 6];
+const arr3 = arr1.concat(arr2); // arr3 será [1, 2, 3, 4, 5, 6]</code></pre>
+          <p>
+            <strong>Uso prático:</strong> Útil quando você precisa combinar
+            dados de diferentes fontes em um único array, sem modificar os
+            arrays originais.
+          </p>
+        </div>
+        <button class="button" id="concatBtn">Executar Exemplo</button>
+        <div class="code-block" id="concatResult"></div>
+        
+      </section>
+
+      <section id="push" class="section">
+        <h2>push()</h2>
+        <div class="explanation-box">
+          <p>
+            O método <code>push()</code> adiciona um ou mais elementos ao
+            *final* de um array. Ele modifica o array original e retorna o novo
+            comprimento do array.
+          </p>
+          <p>
+            <strong>Sintaxe:</strong>
+            <code>array.push(elemento1, elemento2, ...)</code>
+          </p>
+          <p><strong>Exemplo:</strong></p>
+          <pre><code>let arr = [1, 2];
+arr.push(3); // arr agora é [1, 2, 3]
+console.log(arr.push(4,5)); //Imprime 5 (novo comprimento), arr agora é [1,2,3,4,5]</code></pre>
+          <p>
+            <strong>Uso prático:</strong> Ideal para adicionar novos itens a uma
+            lista que cresce ao longo do tempo, como um histórico de ações do
+            usuário ou uma fila de tarefas.
+          </p>
+        </div>
+        <input
+          type="text"
+          id="pushInput"
+          class="form-control mb-2"
+          placeholder="Valor a adicionar"
+        />
+        <button class="button" id="pushBtn">Executar Exemplo</button>
+        <div class="code-block" id="pushResult"></div>
+      </section>
+
+      <section id="pop" class="section">
+        <h2>pop()</h2>
+        <div class="explanation-box">
+          <p>
+            O método <code>pop()</code> remove o *último* elemento de um array e
+            retorna esse elemento. Se o array estiver vazio, ele retorna
+            `undefined`. O array original é modificado.
+          </p>
+          <p><strong>Sintaxe:</strong> <code>array.pop()</code></p>
+          <p><strong>Exemplo:</strong></p>
+          <pre><code>let arr = ["maçã", "banana", "laranja"];
+let removedItem = arr.pop(); // removedItem será "laranja", arr será ["maçã", "banana"]
+console.log(removedItem); // Imprime "laranja"
+console.log(arr); // Imprime ["maçã", "banana"]</code></pre>
+          <p>
+            <strong>Uso prático:</strong> Útil para remover o último item
+            adicionado a uma lista, como desfazer a última ação do usuário em um
+            editor de texto ou remover o último item de uma fila FIFO (First-In,
+            First-Out).
+          </p>
+        </div>
+        <button class="button" id="popBtn">Executar Exemplo</button>
+        <div class="code-block" id="popResult"></div>
+      </section>
+
+      <section id="shift" class="section">
+        <h2>shift()</h2>
+        <div class="explanation-box">
+          <p>
+            O método <code>shift()</code> remove o *primeiro* elemento de um
+            array e retorna esse elemento. Se o array estiver vazio, ele retorna
+            `undefined`. O array original é modificado.
+          </p>
+          <p><strong>Sintaxe:</strong> <code>array.shift()</code></p>
+          <p><strong>Exemplo:</strong></p>
+          <pre><code>let arr = ["maçã", "banana", "laranja"];
+let removedItem = arr.shift(); // removedItem será "maçã", arr será ["banana", "laranja"]
+console.log(removedItem); // Imprime "maçã"
+console.log(arr); // Imprime ["banana", "laranja"]</code></pre>
+          <p>
+            <strong>Uso prático:</strong> Frequentemente usado para processar
+            itens em uma fila FIFO (First-In, First-Out), como processar
+            mensagens em um sistema de comunicação.
+          </p>
+        </div>
+        <button class="button" id="shiftBtn">Executar Exemplo</button>
+        <div class="code-block" id="shiftResult"></div>
+      </section>
+
+      <section id="unshift" class="section">
+        <h2>unshift()</h2>
+        <div class="explanation-box">
+          <p>
+            O método <code>unshift()</code> adiciona um ou mais elementos ao
+            *início* de um array. Ele modifica o array original e retorna o novo
+            comprimento do array.
+          </p>
+          <p>
+            <strong>Sintaxe:</strong>
+            <code>array.unshift(elemento1, elemento2, ...)</code>
+          </p>
+          <p><strong>Exemplo:</strong></p>
+          <pre><code>let arr = [1, 2, 3];
+arr.unshift(0); // arr agora é [0, 1, 2, 3]
+console.log(arr.unshift(-1, -2)); //Imprime 5 (novo comprimento), arr agora é [-2,-1,0,1,2,3]</code></pre>
+          <p>
+            <strong>Uso prático:</strong> Ideal para adicionar itens a uma lista
+            no início, como adicionar novas entradas a um log de eventos em
+            ordem cronológica inversa.
+          </p>
+        </div>
+        <input
+          type="text"
+          id="unshiftInput"
+          class="form-control mb-2"
+          placeholder="Valor a adicionar"
+        />
+        <button class="button" id="unshiftBtn">Executar Exemplo</button>
+        <div class="code-block" id="unshiftResult"></div>
+      </section>
+
+      <section id="splice" class="section">
+        <h2>splice()</h2>
+        <div class="explanation-box">
+          <strong
+            >Adiciona ou remove elementos de um array em uma posição
+            específica.</strong
+          ><br />
+          <em>Exemplo:</em> Para remover um elemento, use
+          <code>frutas.splice(1, 1);</code> com
+          <code>frutas = ["maçã", "banana", "laranja"]</code>, que remove
+          <code>"banana"</code>, resultando em <code>["maçã", "laranja"]</code>.
+          Para adicionar, use <code>frutas.splice(1, 0, "uva");</code> para
+          inserir <code>"uva"</code> na posição 1.
+        </div>
+        <div>
+          <h3>Adição</h3>
+          Índice:
+          <input
+            type="number"
+            class="form-control mb-2"
+            id="spliceIndexAdd"
+          /><br />
+          Valor:
+          <input
+            type="text"
+            class="form-control mb-2"
+            id="spliceValueAdd"
+          /><br />
+          <button class="button" class="form-control" id="spliceBtnAdd">
+            Adicionar com splice
+          </button>
+          <div
+            class="code-block"
+            class="form-control"
+            id="spliceResultAdd"
+          ></div>
+        </div>
+        <div>
+          <h3>Remoção</h3>
+          Índice:
+          <input
+            type="number"
+            class="form-control mb-2"
+            id="spliceIndexRemove"
+          /><br />
+          <button class="button" id="spliceBtnRemove">
+            Remover com splice
+          </button>
+          <div class="code-block" id="spliceResultRemove"></div>
+        </div>
+      </section>
+
+      <section id="slice" class="section">
+        <h2>slice()</h2>
+        <div class="explanation-box">
+          <p>
+            O método <code>slice()</code> retorna uma *nova* parte de um array
+            como um novo array, sem modificar o array original. Ele extrai uma
+            fatia do array original, especificada por um índice inicial e um
+            índice final (opcional).
+          </p>
+          <p><strong>Sintaxe:</strong> <code>array.slice(inicio, fim)</code></p>
+          <p>
+            inicio: Índice do primeiro elemento a incluir na fatia (inclusivo).
+          </p>
+          <p>
+            fim: Índice do elemento *após* o último elemento a incluir
+            (exclusivo). Se omitido, a fatia vai até o final do array.
+          </p>
+          <p><strong>Exemplo:</strong></p>
+          <pre><code>const arr = ["a", "b", "c", "d", "e"];
+const sliced = arr.slice(1, 4); // sliced será ["b", "c", "d"]
+console.log(sliced); //Imprime ["b", "c", "d"]
+console.log(arr); //Imprime ["a", "b", "c", "d", "e"]</code></pre>
+          <p>
+            <strong>Uso prático:</strong> Muito útil para criar cópias de partes
+            de um array sem afetar o array original, como para manipular uma
+            parte específica de dados sem alterar o conjunto de dados principal.
+          </p>
+        </div>
+        Início:
+        <input
+          type="number"
+          class="form-control mb-2"
+          id="sliceInicio"
+          value="1"
+        /><br />
+        Fim:
+        <input
+          type="number"
+          class="form-control mb-2"
+          id="sliceFim"
+          value="3"
+        /><br />
+        <button class="button" id="sliceBtn">Executar Exemplo</button>
+        <div class="code-block" id="sliceResult"></div>
+      </section>
+
+            
+<section id="sort" class="section">
+    <h2>sort()</h2>
+    <div class="explanation-box">
+        <p>O método <code>sort()</code> ordena os elementos de um array *in loco* (modificando o array original). Por padrão, ele ordena os elementos como strings em ordem lexicográfica (alfabética).</p>
+        <p><strong>Sintaxe:</strong> <code>array.sort(compareFunction)</code></p>
+        <p>compareFunction (opcional): Uma função que define a ordem de classificação. Se omitida, a ordenação é feita como strings. A função de comparação recebe dois argumentos (a, b) e deve retornar:</p>
+        <ul>
+            <li>Um valor menor que 0 se `a` deve vir antes de `b`.</li>
+            <li>0 se `a` e `b` são iguais.</li>
+            <li>Um valor maior que 0 se `a` deve vir depois de `b`.</li>
+        </ul>
+        <p><strong>Exemplo (sem compareFunction - ordenação como strings):</strong></p>
+        <pre><code>let arr = ["banana", "maçã", "laranja"];
+arr.sort(); // arr agora é ["banana", "laranja", "maçã"] (ordenado lexicograficamente)</code></pre>
+        <p><strong>Exemplo (com compareFunction - ordenação numérica):</strong></p>
+        <pre><code>let numeros = [3, 1, 4, 1, 5, 9, 2, 6];
+numeros.sort((a, b) => a - b); // numeros agora é [1, 1, 2, 3, 4, 5, 6, 9] (ordenado numericamente)</code></pre>
+        <p><strong>Uso prático:</strong>  Essencial para organizar dados em ordem crescente ou decrescente, como ordenar uma lista de nomes, números, datas ou qualquer outro tipo de dado comparável.</p>
+    </div>
+    <button class="button" id="sortBtn">Executar Exemplo</button>
+    <div class="code-block" id="sortResult"></div>
+</section>
+
+    
+      <section id="reverse" class="section">
+        <h2>reverse()</h2>
+        <div class="explanation-box">
+          <p>
+            O método <code>reverse()</code> inverte a ordem dos elementos de um
+            array *in loco* (modificando o array original). Ele retorna o array
+            invertido.
+          </p>
+          <p><strong>Sintaxe:</strong> <code>array.reverse()</code></p>
+          <p><strong>Exemplo:</strong></p>
+          <pre><code>let arr = [1, 2, 3, 4, 5];
+arr.reverse(); // arr agora é [5, 4, 3, 2, 1]
+console.log(arr); // Imprime [5, 4, 3, 2, 1]</code></pre>
+          <p>
+            <strong>Uso prático:</strong> Útil para apresentar dados em ordem
+            inversa, como exibir um histórico de eventos do mais recente para o
+            mais antigo, ou inverter a ordem de itens em uma lista.
+          </p>
+        </div>
+        <button class="button" id="reverseBtn">Executar Exemplo</button>
+        <div class="code-block" id="reverseResult"></div>
+      </section>
+
+      <section id="forEach" class="section">
+        <h2>forEach()</h2>
+        <div class="explanation-box">
+          <p>
+            O método <code>forEach()</code> executa uma função fornecida uma vez
+            para cada elemento de um array. Ele não retorna nenhum valor, apenas
+            executa a função para cada elemento. O array original não é
+            modificado.
+          </p>
+          <p>
+            <strong>Sintaxe:</strong>
+            <code
+              >array.forEach(function(currentValue, index, arr),
+              thisValue)</code
+            >
+          </p>
+          <p>currentValue: O valor atual do elemento sendo processado.</p>
+          <p>index: O índice do elemento atual.</p>
+          <p>arr: O array original.</p>
+          <p>
+            thisValue (opcional): Um valor para usar como `this` dentro da
+            função de callback.
+          </p>
+          <p><strong>Exemplo:</strong></p>
+          <pre><code>const arr = ["maçã", "banana", "laranja"];
+arr.forEach(fruta => console.log(fruta)); // Imprime cada fruta no console</code></pre>
+          <p>
+            <strong>Uso prático:</strong> Ideal para iterar sobre um array e
+            executar uma ação para cada elemento, como exibir os elementos em
+            uma página web ou processar uma lista de dados.
+          </p>
+        </div>
+        <button class="button" id="forEachBtn">Executar Exemplo</button>
+        <div class="code-block" id="forEachResult"></div>
+      </section>
+
+      <section id="map" class="section">
+        <h2>map()</h2>
+        <div class="explanation-box">
+          <p>
+            O método <code>map()</code> cria um *novo* array com os resultados
+            da chamada de uma função fornecida para cada elemento do array
+            original. O array original não é modificado.
+          </p>
+          <p>
+            <strong>Sintaxe:</strong>
+            <code
+              >array.map(function(currentValue, index, arr), thisValue)</code
+            >
+          </p>
+          <p>currentValue: O valor atual do elemento sendo processado.</p>
+          <p>index: O índice do elemento atual.</p>
+          <p>arr: O array original.</p>
+          <p>
+            thisValue (opcional): Um valor para usar como `this` dentro da
+            função de callback.
+          </p>
+          <p><strong>Exemplo:</strong></p>
+          <pre><code>const numeros = [1, 2, 3];
+const quadrados = numeros.map(num => num * num); // quadrados será [1, 4, 9]</code></pre>
+          <p>
+            <strong>Uso prático:</strong> Frequentemente usado para transformar
+            os elementos de um array, como converter uma lista de nomes para
+            letras maiúsculas, ou aplicar uma função matemática a cada número de
+            um array.
+          </p>
+        </div>
+        <button class="button" id="mapBtn">Executar Exemplo</button>
+        <div class="code-block" id="mapResult"></div>
+      </section>
+
+      <section id="filter" class="section">
+        <h2>filter()</h2>
+        <div class="explanation-box">
+          <p>
+            O método <code>filter()</code> cria um *novo* array com todos os
+            elementos que passam em um teste implementado por uma função
+            fornecida. O array original não é modificado.
+          </p>
+          <p>
+            <strong>Sintaxe:</strong>
+            <code
+              >array.filter(function(currentValue, index, arr), thisValue)</code
+            >
+          </p>
+          <p>currentValue: O valor atual do elemento sendo processado.</p>
+          <p>index: O índice do elemento atual.</p>
+          <p>arr: O array original.</p>
+          <p>
+            thisValue (opcional): Um valor para usar como `this` dentro da
+            função de callback.
+          </p>
+          <p><strong>Exemplo:</strong></p>
+          <pre><code>const numeros = [1, 2, 3, 4, 5, 6];
+const pares = numeros.filter(num => num % 2 === 0); // pares será [2, 4, 6]</code></pre>
+          <p>
+            <strong>Uso prático:</strong> Ideal para selecionar elementos
+            específicos de um array com base em critérios, como filtrar uma
+            lista de usuários com base na idade ou selecionar produtos com um
+            determinado preço.
+          </p>
+        </div>
+        <button class="button" id="filterBtn">Executar Exemplo</button>
+        <div class="code-block" id="filterResult"></div>
+      </section>
+
+      <section id="reduce" class="section">
+        <h2>reduce()</h2>
+        <div class="explanation-box">
+          <p>
+            O método <code>reduce()</code> executa uma função reducer (uma
+            função que você fornece) para cada elemento do array, resultando em
+            um único valor de saída. O array original não é modificado.
+          </p>
+          <p>
+            <strong>Sintaxe:</strong>
+            <code
+              >array.reduce(function(accumulator, currentValue, currentIndex,
+              array), initialValue)</code
+            >
+          </p>
+          <p>
+            accumulator: O valor acumulado. No primeiro passo, é o
+            `initialValue` (ou o primeiro elemento do array se `initialValue`
+            não for fornecido).
+          </p>
+          <p>currentValue: O valor atual do elemento sendo processado.</p>
+          <p>currentIndex: O índice do elemento atual.</p>
+          <p>array: O array original.</p>
+          <p>
+            initialValue (opcional): Um valor a ser usado como o primeiro
+            argumento para a função `reducer` na primeira iteração.
+          </p>
+          <p><strong>Exemplo:</strong></p>
+          <pre><code>const numeros = [1, 2, 3, 4, 5];
+const soma = numeros.reduce((acc, num) => acc + num, 0); // soma será 15</code></pre>
+          <p>
+            <strong>Uso prático:</strong> Permite realizar cálculos cumulativos
+            em um array, como somar todos os números, encontrar o maior ou menor
+            valor, ou concatenar todas as strings em uma única string.
+          </p>
+        </div>
+        <button class="button" id="reduceBtn">Executar Exemplo</button>
+        <div class="code-block" id="reduceResult"></div>
+      </section>
+
+
+      <section id="arrayManipulation" class="section">
+        <h2>Manipulação de Array</h2>
+        <h6>Pratique alguns dos mais utilizados</h6>
+        <div id="arrayDisplay" class="code-block">
+          <pre><code>const frutas = ["maçã", "banana"];</code></pre>
+        </div>
+        <div class="input-container">
+          <input
+            type="text"
+            id="appendInput"
+            placeholder="Valor para adicionar"
+          />
+          <button class="button" id="appendBtn">Append</button>
+        </div>
+
+        <div class="input-container">
+          <input
+            type="text"
+            id="removeInput"
+            placeholder="Valor para remover"
+          />
+          <button class="button" id="removeBtn">Remove</button>
+        </div>
+        <div class="input-container">
+          <input
+            type="text"
+            id="insertValueInput"
+            placeholder="Valor para inserir"
+          />
+          <input type="number" id="insertIndexInput" placeholder="Índice" />
+          <button class="button" id="insertBtn">Insert</button>
+        </div>
+        <div class="input-container">
+          <button class="button" id="sortBtnArray">Sort</button>
+          <button class="button" id="reverseBtnArray">Reverse</button>
+          <button class="button" id="popBtnArray">Pop</button>
+          <button class="button" id="clearBtn">Clear Array</button>
+        </div>
+        
+      </section>
+
+      <div class="button-container">
+        <button class="button" id="prevBtn" onclick="changeSection(-1)">
+          Voltar
+        </button>
+        <button class="button" id="nextBtn" onclick="changeSection(1)">
+          Avançar
+        </button>
+      </div>
+    </main>
+
+    <footer class="footer">
+      <p>&copy; 2024 What is that. Todos os direitos reservados.</p>
+    </footer>
+
+    <script src="/js/prevNetxButton.js"></script>
+    <script src="/js/array.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script></script>
+  </body>
+</html>
