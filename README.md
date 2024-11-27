@@ -1,7 +1,20 @@
-# What is that? - Um guia para aprender sobre Arrays em JavaScript
+"What is That?" é uma aplicação educacional desenvolvida com o objetivo de auxiliar no ensino de JavaScript, abordando conceitos fundamentais e avançados com ênfase em estruturas de dados, como arrays. Este projeto foi criado como parte do Trabalho de Conclusão de Curso (TCC), evidenciando a aplicação de conhecimentos teóricos e práticos adquiridos ao longo do curso.
+Objetivo do Projeto
 
-Este projeto é um site educativo que ensina os conceitos básicos de arrays em JavaScript, com exemplos práticos e exercícios interativos, futuramente iremos ensinar sobre mais conceitos.
+O projeto visa oferecer uma plataforma educacional interativa que:
 
+    Forneça recursos didáticos claros e objetivos sobre JavaScript.
+    Proporcione um aprendizado prático, com exemplos e exercícios aplicáveis ao mercado de trabalho.
+    Avalie o conhecimento do usuário por meio de quizzes interativos, promovendo feedback instantâneo.
+
+Além disso, o projeto busca demonstrar habilidades no desenvolvimento de sistemas baseados na web, utilizando ferramentas modernas e boas práticas de programação.
+
+Informações Técnicas
+
+    Linguagem de Programação: JavaScript
+    Hospedagem: GitHubPages
+    Plataforma: Aplicação Web responsiva, acessível tanto em desktop quanto dispositivos móveis.
+    Modo de Codificação: Desenvolvimento tradicional com foco em qualidade e escalabilidade do código.
 
 ## Conteúdo:
 
@@ -23,12 +36,6 @@ Este projeto é um site educativo que ensina os conceitos básicos de arrays em 
 * **Manipulação Direta de Arrays:** Seção com exemplos práticos de como adicionar, remover e inserir elementos em arrays.
 * **Quiz Interativo:**  Um quiz para testar o conhecimento do usuário sobre os métodos e conceitos de arrays.
 
-## Tecnologias Utilizadas:
-
-* HTML
-* CSS (com Bootstrap para responsividade)
-* JavaScript
-
 ## Como Executar o Projeto Localmente:
 
 1. Clone o repositório: `git clone https://github.com/sanferreira/what-is-that.git`
@@ -37,7 +44,6 @@ Este projeto é um site educativo que ensina os conceitos básicos de arrays em 
 ## Contribuições:
 
 Contribuições são bem-vindas!  Sinta-se à vontade para abrir issues ou enviar pull requests.
-
 
 ## Licença:
 
